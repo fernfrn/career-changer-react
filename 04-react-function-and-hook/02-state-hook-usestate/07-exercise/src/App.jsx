@@ -2,37 +2,47 @@ import React, { useState } from 'react';
 
 function App() {
     // adding state here.
+    // [stateVariable, stateMethod] = useState(init)
+    const [choices, setChoices] = useState('')
 
   const handleClick = (value) => {
     // code here.
-  };
-
+    setChoices(value.target.textContent);
+    };
+  
   return (
     <div>
-      <button>Fullname</button>
-      <button>Age</button>
-      <button>Picture</button>
-      <DisplayInfo />
+      
+      {/* <button onClick={() => setChoices('Fullname')}>Fullname</button>
+      <button onClick={() => setChoices('Age')}>Age</button>
+      <button onClick={() => setChoices('Picture')}>Picture</button> อันนี้ลองรันผ่านครั้งแรกเขียนเอง */}
+
+      {/* อันนี้ลอกคุณช้าง */}
+      <button onClick={handleClick}>Fullname</button>
+      <button onClick={handleClick}>Age</button>
+      <button onClick={handleClick}>Picture</button>
+      <DisplayInfo choices={choices}/>
     </div>
   );
-}
+
+  }
 
 function DisplayInfo(props) {
 
-  let ___;
-  if (___ === 'Fullname') {
-    ___ = <h2>John Doe</h2>;
-  } else if (___ === 'Age') {
-    ___ = <h2>30</h2>;
-  } else if (___ === 'Picture') {
-    ___ = <img src="https://via.placeholder.com/150" alt="Placeholder" />;
+  let choices = props.choices;
+  if (choices === 'Fullname') {
+    choices = <h2>John Doe</h2>;
+  } else if (choices === 'Age') {
+    choices = <h2>30</h2>;
+  } else if (choices === 'Picture') {
+    choices = <img src="https://via.placeholder.com/150" alt="Placeholder" />;
   } else {
-    ___ = <p>Please select an option.</p>;
+    choices = <p>Please select an option.</p>;
   }
 
   return (
     <div>
-      {___}
+      {choices}
     </div>
   );
 }

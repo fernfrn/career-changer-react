@@ -11,11 +11,28 @@ import {
 } from "react-router-dom";
 import UserContext from './UserContext';
 import Signup from './Signup'
+import Layout from './Layout'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Home />
+    element: <>
+      <Home />
+    </>
+  },
+
+  {
+    path: '/login',
+    element: <>
+      <Login />
+    </>
+  },
+
+  {
+    path: '/signup',
+    element: <>
+      <Signup />
+    </>
   },
 ])
 

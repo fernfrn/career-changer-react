@@ -3,9 +3,9 @@
 const Navbar = () => {
     return (
         <ul>
-            <li>Home</li>
-            <li>Signup</li>
-            <li>Login</li>
+            <li><a href={'/'}>Home</a></li>
+            <li><a href={'/login'}>Signup</a></li>
+            <li><a href={'/signup'}>Login</a></li>
         </ul>
     )
 }

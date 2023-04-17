@@ -4,5 +4,6 @@ import App from './App'
 import './assets/style/index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <App />
+  // <App />
+  < AutoSync />
 )

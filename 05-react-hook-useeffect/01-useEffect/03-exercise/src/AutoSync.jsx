@@ -1,0 +1,33 @@
+import React, { useState } from "react";
+import { useEffect } from "react";
+// import here
+
+// edit function name
+const AutoSync = () => {
+  const [rate, setRate] = useState(0);
+  const [exchange, setExchange] = useState(1);
+
+  const syncRate = () => {
+    setRate(30);
+  };
+
+  const handleExchangeChange = (event) => {
+    const newExchange = event.target.value;
+    setExchange(newExchange);
+  };
+
+// add useEffect
+  useEffect(syncRate, [])
+
+  return (
+    <div>
+      <h1>Current Rate: {rate}</h1>
+      {/* <button onClick={syncRate}>Sync Rate</button> */}
+      <input type="number" value={exchange} onChange={handleExchangeChange} />
+      <h2>Calculated Exchange: {exchange * rate}</h2>
+    </div>
+  );
+};
+
+export default AutoSync;
+// Edit here
