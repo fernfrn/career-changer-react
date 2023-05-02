@@ -34,6 +34,14 @@ const router = createBrowserRouter([
       <Signup />
     </>
   },
+  {
+    path: '/login',
+    element: <Login />
+  },
+  {
+    path: '/signup',
+    element: <Signup />
+  }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
